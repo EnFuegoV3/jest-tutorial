@@ -49,4 +49,24 @@ export function caesarCipher(word, a) {
 }
 
 
+export function analyzeArray(arr) {
+    const object = {};
+    
+
+    let average = 0
+
+    for( let i = 0; i < arr.length; i++) {
+        average += arr[i];
+        object.average = average/arr.length;
+    }
+    
+    object.min = Math.min(...arr);
+    object.max = Math.max(...arr);
+    object.length = arr.length;
+
+    return object;
+
+
+}
+
 
