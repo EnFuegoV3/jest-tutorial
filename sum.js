@@ -22,3 +22,31 @@ export const calc = {
     divide
 }
 
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+let newAlpha = "";
+
+function shift(n) {
+    for(let i = 0; i < alphabet.length; i++) {
+        let offset = (i + n) % alphabet.length;
+        newAlpha += alphabet[offset];
+    }
+    
+}
+
+export function caesarCipher(word, a) {
+    shift(a);
+    let result = "";
+    word = word.toLowerCase();
+    for(let i = 0; i < word.length; i++) {
+        let index = alphabet.indexOf(word[i]);
+        if(index > -1){
+        result += newAlpha[index];
+        } else {
+            result += ' ';
+        }
+    }
+    return result;
+}
+
+
+

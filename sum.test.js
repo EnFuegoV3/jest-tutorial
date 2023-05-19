@@ -1,7 +1,8 @@
-import { sum } from "./sum";
+import { caesarCipher, sum } from "./sum";
 import { capitalize } from "./sum";
 import { reverse } from "./sum";
 import { calc } from "./sum";
+
 
 test('adds 1 + 2 to equal 3', () => {
     expect(sum(1, 2)).toBe(3);
@@ -29,4 +30,12 @@ test('mulitply from calc object', () => {
 
 test('divide from calc object', () => {
     expect(calc.divide(8,2)).toBe(4);
+})
+
+test('caesar', () => {
+    expect(caesarCipher("hello", 1)).toBe("ifmmp")
+})
+
+test('caesar to loop z', () => {
+    expect(caesarCipher("zero", 1)).toBe("afsp");
 })
